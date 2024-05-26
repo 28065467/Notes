@@ -18,4 +18,12 @@ The first 2 terms are the same so we use a variable called local error signal to
 $$\frac{\partial{s}}{\partial{W}} = \delta \frac{\partial{z}}{\partial{W}}$$
 
 * The grdient calculated by the jacobian is a *row vector* which is not friendly for SGD but good for calculation
-    => For better SGD, follow the *shape convention* to make the output gradient also be a m\*n matrix(find a proper time to transpose the matrix)
+    => For better SGD, follow the *shape convention* to make the output gradient also be a m\*n matrix(reuse the *higher* partial derivative)
+### Propogation
+* *Forward Propogation* is the process that we compute the output by the defined network functions
+> For examples like $f(x,y,z)=(x+y)max(y,z)$ with x=1,y=2,z=0
+> ```mermaid
+> flowchart LR
+> id1((x))---|1|id2(+)
+> id3((y))---|2|id2(+)
+> ```
