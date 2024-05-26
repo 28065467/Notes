@@ -12,7 +12,7 @@
 ![](images/![alt%20text](image-4.png).png)
  There's 2 parameter *b* and *W*. To compute the partial derivate of b, let $h=f(z)$ and $z=Wx+b$
  $$\frac{\partial{s}}{\partial{b}} = \frac{\partial{s}}{\partial{h}}\frac{\partial{h}}{\partial{z}}\frac{\partial{z}}{\partial{b}}=u^Tdiag(f^{'}(z))$$
- With the respect to $W$ :
+ With the respect to W :
 $$ 
 \frac{\partial{s}}{\partial{W}} = \frac{\partial{s}}{\partial{h}} \frac{\partial{h}}{\partial{z}} \frac{\partial{z}}{\partial{W}} 
 $$
