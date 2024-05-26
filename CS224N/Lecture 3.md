@@ -1,9 +1,9 @@
 ### Gradient
 * The gradient is the *vector of partial derivates* of a function with respect to each input
-> For example
-> ![](images/![](../2024-05-26-02-34-38.png).png)
-> The gradient of the above function is =>
-> ![](images/![alt%20text](image-1.png).png)
+> For example like
+> $$f(x) = f(x_1,x_2...x_n)$$
+> The gradient of the above function is
+> $$[\frac{\partial{f}}{\partial{x_1}}...\frac{\partial{f}}{\partial{x_n}}]$$
 * To generalized it to functions with n inputs and m outputs, we use the *jacobian matrix* to represent gradient
 > ![](images/![alt%20text](image-2.png).png)
 * These are some useful gradient of the jacobian matrix
