@@ -13,9 +13,7 @@
  There's 2 parameter *b* and *W*. To compute the partial derivate of b, let $h=f(z)$ and $z=Wx+b$
  $$\frac{\partial{s}}{\partial{b}} = \frac{\partial{s}}{\partial{h}}\frac{\partial{h}}{\partial{z}}\frac{\partial{z}}{\partial{b}}=u^Tdiag(f^{'}(z))$$
  With the respect to $W$ :
-$$ 
-\frac{\partial{s}}{\partial{W}} = \frac{\partial{s}}{\partial{h}} \frac{\partial{h}}{\partial{z}} \frac{\partial{z}}{\partial{W}} 
-$$
+$$\frac{\partial{s}}{\partial{W}} = \frac{\partial{s}}{\partial{h}} \frac{\partial{h}}{\partial{z}} \frac{\partial{z}}{\partial{W}}$$
 The first 2 terms are the same so we use a variable called local error signal to avoid recomputing, thus:
 $$ 
 \frac{\partial{s}}{\partial{W}} = \delta \frac{\partial{z}}{\partial{W}} 
