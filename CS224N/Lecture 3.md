@@ -26,4 +26,12 @@ $$\frac{\partial{s}}{\partial{W}} = \delta \frac{\partial{z}}{\partial{W}}$$
 > flowchart LR
 > id1((x))---|1|id2(+)
 > id3((y))---|2|id2(+)
+> id3((y))---|2|id5(max)
+> id4((z))---|0|id5(max)
+> id2---|3|id6(*)
+> id5---|2|id6(*)
+> id6---6
 > ```
+* *Back Propogation* is the process we update the parameter by passing back the derivatives$$downstream\ derivative = local\  derivates * upstream\ derivates$$
+> Let $a=x+y$,$b=max(y,z)$ and $f=ab$. Than, for the *\** node above the *upsteam* = $\frac{\partial{f}}{\partial{f}}=1$ and $local = \frac{\partial{f}}{\partial{a}} = 2\ and\ \frac{\partial{f}}{\partial{b}} = 3$
+> The downsteam to node *\+* will be 1\*2 = 2 and for node *max* is 1\*3 = 3
