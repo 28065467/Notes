@@ -1,5 +1,6 @@
-# Functions
-## switch
+# C/C++
+## Functions
+### switch
 * Without *break* than it will continue running the next case no matter it meets the condition or not
 ```c
 int sum = 0;
@@ -15,26 +16,26 @@ switch(number){
 }
 ```
 > Input with [1,1,2] => Since case 1 has no break => every 1 will add 1+2 = 3 to the sum => Result = 3 + 3 + 2 = 8
-## Bit Operations
+### Bit Operations
 1. `&`AND 
 2. `|`OR
 3. `^`XOR
 4. `~`NOT
 5. `<<`SL
 6. `>>`SR
-## printf
+### printf
 1. ```%a.bf```
    * *a* means the *width*(total digits including decimal point) if not enough padded with *space* in the left
    * b is *precision*(digits after the decimal point)
 > Ex. ```%2.1f``` for *2.412* => precision = 1 => ```2.4``` => width = 2 => no change => Result = ```2.4```  
 > 
 > Ex2. ```%3.f``` for *2.412* => precision = 0 => rounding => ```2``` => width = 3 => not enough => Result = ```  2```  
-## enum
+### enum
 * Can decide the start of increaseing
 ```c
 enum{a,b = 1,c,d}; // a = 0, b = 1 , c = 2 , d = 4 
 ```
-## pointer
+### pointer
 1. `&` Address of operator
 ```c++
 int a = 1;
@@ -56,8 +57,9 @@ cout << pp; // The content of pp (i.e. address of p or &p)
 cout << *pp; // The address that p contains (i.e. address of a or *(&p))
 cout << **pp; // The content in the address that p contains(i.e. a or **(&p) = *p = *(&a) = a)
 ```
-# Class
+## Class
 ```c++
+// Base class A
 class A{
     private:
         int a;
@@ -76,6 +78,7 @@ class A{
             a = v;
         }
 }
+// Child class B
 class B : public A{
     private:
         int b;
@@ -101,8 +104,24 @@ class B : public A{
         }
 }
 ```
-## Inherite
-### Polymorphism
+### Inherite
+#### Virtual
+* `virtual int fun() = 0` : postfix `=0` means the function is **pure virtual**
+> A class with pure virtual function is an **abstract class**, and can't be used for declare an object => For example, if `class C` is abstract class then `C object` will lead to CE
+#### Override
+* With postfix override, we can ensure that child class will override its base class's function and detecting spelling miss
+```c++
+class base{
+    public:
+        virtual int add(){return 1+2;}
+};
+class child{
+    public:
+        int add() override {return 1+2;}
+};
+```
+> The function `add` will be override, and even we spell wrong like ad it will throw an except with *not matcing to the base function name*
+#### Polymorphism
 * A pointer with type of base class can point to its all child class(*polymorphism*)
 > ```c++
 >A* pointer;
@@ -113,7 +132,7 @@ class B : public A{
 > pointer -> f(); // Output class A's f() since the class of the pointer is A
 > pointer -> g(); // Output class B's g() since g() is a virtual function
 > ```
-#### Deconstructor
+##### Deconstructor
 * Unless the deconstruct function is a virtual function, then a class will always call its *father's deconstructor*
 >```c++
 > delete pointer // Output 66
@@ -126,7 +145,7 @@ class B : public A{
 * If there's same function in the child class then it will *overwrite* the function in their father class
 
 
-# Misc
+## Misc
 * `'\n'` ascii = 0, the smallest ascii code
 * An array parameter is *call by reference*
 ```c
@@ -143,3 +162,12 @@ int main(){
 int *p = new int(5);
 delete[] p;
 ```
+* It's better to use `const &` as the parameter for constructor
+# Python
+
+## Misc
+* `//` : floor division
+* `a[start : end : step]` : excluding end
+  > ex. print(a[1:5:2]) = > {1,3,5}
+* `print(variable , 'string' , end='')` : By default end='\n'
+  > ex. print(n , '*' , end='') => 1\*2\*3\*4
