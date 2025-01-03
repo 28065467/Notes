@@ -163,6 +163,7 @@ int *p = new int(5);
 delete[] p;
 ```
 * It's better to use `const &` as the parameter for constructor
+* `[](parameter){function body}`: [] work as the keyword for lambda function
 # Python
 
 ## Misc
